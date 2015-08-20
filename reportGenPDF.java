@@ -26,10 +26,12 @@ import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class reportGenPDF {
-	static String IMAGE_PATH = "/Users/Abraxas/Documents/drJeong/img/";
-	static String PY_PATH = "/Users/Abraxas/Documents/drJeong/clean.py";
+
+	static String TOP_PATH = "/Users/Abraxas/Documents/drJeong/";
+	static String PY_NAME = "clean.py";
+	static String IMAGE_PATH = PY-PATH + "img/";
 	static String CSV_NAME = "processed.csv";
-	static String REPORT_COLLECTION = "/Users/Abraxas/Documents/drJeong/collection/";
+	static String REPORT_COLLECTION = TOP_PATH + "collection/";
 	
 	private static void Line(Graphics2D g, Double[] x, int xLength, int yLength, int xPos, int yPos) {
 	  int midX = (xLength / 2) + xPos; int midY = (yLength / 2) + yPos; int length = 210; int angularDiff = 149;
@@ -130,11 +132,11 @@ public class reportGenPDF {
 	}
 	public static void main(String[] args) throws IOException, InterruptedException, DocumentException {
 
-		ProcessBuilder pb = new ProcessBuilder("python",PY_PATH+"clean.py");
+		ProcessBuilder pb = new ProcessBuilder("python",TOP_PATH + PY_NAME);
 		Process p = pb.start();
 		 
 		// -define .csv file in app
-        String fileNameDefined = PY_PATH + CSV_NAME;
+        String fileNameDefined = TOP_PATH + CSV_NAME;
         // -File class needed to turn stringName to actual file
         File file = new File(fileNameDefined);
         try{
