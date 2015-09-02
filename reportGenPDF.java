@@ -29,7 +29,7 @@ public class reportGenPDF {
 
 	static String TOP_PATH = "/Users/Abraxas/Documents/drJeong/";
 	static String PY_NAME = "clean.py";
-	static String IMAGE_PATH = PY-PATH + "img/";
+	static String IMAGE_PATH = TOP_PATH + "img/";
 	static String CSV_NAME = "processed.csv";
 	static String REPORT_COLLECTION = TOP_PATH + "collection/";
 	
